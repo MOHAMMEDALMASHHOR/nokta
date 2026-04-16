@@ -17,8 +17,8 @@ export default function App() {
   const handleSend = () => {
     if (!inputText.trim()) return;
 
-    const newMsgs = [...messages, { role: 'user', text: inputText }];
-    setMessages(newMsgs as {role: 'user'|'ai', text: string}[]);
+    const newMsgs: {role: 'user'|'ai', text: string}[] = [...messages, { role: 'user', text: inputText }];
+    setMessages(newMsgs);
     setInputText('');
 
     if (step < questions.length) {
